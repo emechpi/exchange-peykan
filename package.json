@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "now-build": "next build & prisma generate",
     "build": "next build & prisma generate",
     "start": "next start",
     "lint": "next lint"
@@ -36,5 +37,11 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "prisma": "^5.2.0"
-  }
+  },
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ]
 }
